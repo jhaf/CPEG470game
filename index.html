@@ -1,3 +1,29 @@
 <!doctype html>
 <html>
+  <head>
+    <title>Game</title>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-database.js"></script>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <script>
+var firebaseConfig = {
+  apiKey: "AIzaSyB4rsg3TVT-xajT15eVIDuZbE3hWc-49qs",
+  authDomain: "testgame-d6026.firebaseapp.com",
+  databaseURL: "https://testgame-d6026.firebaseio.com",
+  projectId: "testgame-d6026",
+  storageBucket: "testgame-d6026.appspot.com",
+  messagingSenderId: "371397169621",
+  appId: "1:371397169621:web:e43f246bc08fe42c382d5c"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+let myDatabase = firebase.database();
+myDatabase.ref("dictionary").once('value', ss=>{
+  alert(ss.val());
+})
+    </script>
+  </body>
 </html>
